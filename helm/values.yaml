@@ -1,0 +1,25 @@
+namespace:
+  name: senate
+
+image:
+  repository: travops87/official-disclosure:latest
+  pullPolicy: Always
+
+replicaCount: 1
+
+service:
+  type: ClusterIP
+  port: 80
+
+config:
+  legislators_url: "https://example.com/legislators-data"
+
+postgres:
+  namespace: postgres
+  service:
+    name: postgres
+    namespace: official-list
+  database: official
+  username: admin
+  password: admin
+  port: 5432

@@ -1,0 +1,3 @@
+kubernetes
+sqlalchemy
+psycopg2-binary
